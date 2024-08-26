@@ -1,38 +1,112 @@
-.App {
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0d0d0d;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250vh; /* This makes the body take the full height of the viewport */
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid #333;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 10px;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  border: 1px solid #444;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cell:hover {
+  background-color: skyblue;
+}
+
+.selected {
+  background-color: #1e90ff;
+}
+
+.controls {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 20px; /* Adds space below the controls section */
+}
+
+.move-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px; /* Adds space below the move buttons */
+}
+
+.move-buttons button {
+  padding: 8px 16px;
+  background-color: #05065a;
+  color: rgb(72, 55, 231);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.move-buttons button:hover {
+  background-color: #390ba4;
+}
+
+.message {
+  color: #ff6347;
+  margin-top: 10px;
+}
+
+.winner {
+  text-align: center;
+  color: #32cd32;
+}
+
+.history {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column; /* Arrange entries in a column */
+  align-items: center; /* Center the history items */
+  max-width: 300px; /* Adjust this to control the width of the history container */
+}
+
+.history-entry {
+  width: 100%;
+  margin-bottom: 3px; /* Reduced margin for a more compact layout */
+  padding: 4px; /* Reduced padding for smaller size */
+  background-color: #444;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-radius: 3px;
+  text-align: left;
+  font-size: 14px; /* Smaller font size for history entries */
 }
